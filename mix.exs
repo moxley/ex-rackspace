@@ -2,12 +2,18 @@ defmodule Rackspace.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :rackspace,
-     version: "0.1.0",
-     elixir: "~> 1.3",
-     deps: deps(),
-     test_coverage: [tool: ExCoveralls],
-     preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test, "coveralls.post": :test, "coveralls.html": :test]
+    [
+      app: :rackspace,
+      version: "0.1.0",
+      elixir: "~> 1.3",
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ]
     ]
   end
 
@@ -15,8 +21,7 @@ defmodule Rackspace.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger, :httpotion, :timex],
-     mod: {Rackspace, []}]
+    [applications: [:logger, :httpotion, :timex], mod: {Rackspace, []}]
   end
 
   # Dependencies can be Hex packages:
